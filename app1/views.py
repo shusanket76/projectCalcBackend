@@ -9,6 +9,7 @@ class Home(APIView):
         return Response({"msg":"successful"})
 class DerivativeView(APIView):
     def post(self, request, format=None):
+        print("DERIVATIVE")
         incoming_Latexfunction = request.data.get("function")
         result= derivativeFunction(incoming_Latexfunction)
         return Response({"msg":f"{result}"})
